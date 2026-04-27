@@ -175,22 +175,33 @@ function Stars({ count = 5 }: { count?: number }) {
 // ─── Remotion animated statement scene ────────────────────────────────────────
 // Runs inside @remotion/player — must use remotion hooks, cannot use React state
 
-function AnimatedStatement() {
-  return (
-    <MarkerHighlight
-      before="Your "
-      highlight="perfect table"
-      after=" awaits."
-      markerColor="#D4A853"
-      baseColor="#F0E6D0"
-      highlightedTextColor="#0A0805"
-      backgroundColor="#0A0805"
-      fontSize={88}
-      fontWeight={400}
-      speed={0.85}
-    />
-  )
-}
+// import { AbsoluteFill } from "remotion"
+// function AnimatedStatement() {
+//   return (
+//     <AbsoluteFill
+//       style={{
+//         display: "grid",
+//         placeItems: "center",
+//         textAlign: "center",
+//       }}
+//     >
+//       <div style={{ width: "100%", textAlign: "center" }}>
+//         <MarkerHighlight
+//           before="Your "
+//           highlight="dining experience"
+//           after=" is waiting."
+//           markerColor="#e41212"
+//           baseColor="#F0E6D0"
+//           highlightedTextColor="#0A0805"
+//           backgroundColor="#0A0805"
+//           fontSize={88}
+//           fontWeight={400}
+//           speed={0.85}
+//         />
+//       </div>
+//     </AbsoluteFill>
+//   )
+// }
 
 // ─── Main export ───────────────────────────────────────────────────────────────
 
