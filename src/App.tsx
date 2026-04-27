@@ -6,8 +6,6 @@ import {
   MessageCircle, Award, Leaf, Users, ArrowDown,
   Quote, ExternalLink,
 } from "lucide-react"
-import { Player } from "@remotion/player"
-import { MarkerHighlight } from "@/components/ui/marker-highlight"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -172,36 +170,6 @@ function Stars({ count = 5 }: { count?: number }) {
   )
 }
 
-// ─── Remotion animated statement scene ────────────────────────────────────────
-// Runs inside @remotion/player — must use remotion hooks, cannot use React state
-
-import { AbsoluteFill } from "remotion"
-function AnimatedStatement() {
-  return (
-    <AbsoluteFill
-      style={{
-        display: "grid",
-        placeItems: "center",
-        textAlign: "center",
-      }}
-    >
-      <div style={{ width: "100%", textAlign: "center" }}>
-        <MarkerHighlight
-          before="Your "
-          highlight="dining experience"
-          after=" is waiting."
-          markerColor="#e41212"
-          baseColor="#F0E6D0"
-          highlightedTextColor="#0A0805"
-          backgroundColor="#0A0805"
-          fontSize={88}
-          fontWeight={400}
-          speed={0.85}
-        />
-      </div>
-    </AbsoluteFill>
-  )
-}
 
 // ─── Main export ───────────────────────────────────────────────────────────────
 
@@ -624,37 +592,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Animated statement ──────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-y border-border">
-        <Player
-          component={AnimatedStatement}
-          inputProps={{}}
-          durationInFrames={150}
-          fps={30}
-          compositionWidth={1400}
-          compositionHeight={340}
-          controls={false}
-          autoPlay
-          loop
-          acknowledgeRemotionLicense
-          style={{ width: "100%", height: "clamp(180px, 24vw, 340px)", display: "block" }}
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
-        >
-
-        </motion.div>
-        <button
-            onClick={() => scrollTo("contact")}
-            className="inline-flex items-center gap-2 rounded-full bg-primary/15 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/40 hover:border-primary px-6 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 backdrop-blur-sm"
-          >
-            Reserve Your Table Tonight
-          </button>
-      </section>
 
       {/* ── Instagram ───────────────────────────────────────────────────── */}
       <section className="py-20 bg-card/40 border-y border-border">
