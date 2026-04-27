@@ -646,13 +646,14 @@ export default function App() {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="absolute bottom-6 left-1/2 -translate-x-1/2"
         >
-          <button
+
+        </motion.div>
+        <button
             onClick={() => scrollTo("contact")}
             className="inline-flex items-center gap-2 rounded-full bg-primary/15 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/40 hover:border-primary px-6 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 backdrop-blur-sm"
           >
             Reserve Your Table Tonight
           </button>
-        </motion.div>
       </section>
 
       {/* ── Instagram ───────────────────────────────────────────────────── */}
